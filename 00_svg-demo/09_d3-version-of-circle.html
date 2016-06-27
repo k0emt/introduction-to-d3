@@ -12,6 +12,8 @@
       }
       svg {
         background-color: white;
+        font-size: 2em;
+        font-family: Sans-Serif;
       }
     </style>
 </head>
@@ -61,6 +63,11 @@
         .attr("cy",125)
         .attr("stroke","hotpink")
         .attr("stroke-width",3);
+
+        svg.append("text")
+        .attr("x",150)
+        .attr("y",230)
+        .text("D3!")
     </script>
 
     <svg width="250" height="250">
@@ -68,11 +75,9 @@
         <rect width="50" height="50" x="150" y="50" fill="brown" />
         <rect width="50" height="50" x="50" y="150" fill="none" stroke="green" stroke-width="5" />
         <rect width="50" height="50" x="150" y="150" fill="white" stroke="rgb(100,50,200)" stroke-width="3" />
-
         <circle r="30" cx="125" cy="125" stroke="hotpink" stroke-width="3" />
+        <text x="150" y="230">SVG</text>
     </svg>
-
-    <h1>D3 on the left</h1>
 </body>
 
 </html>
