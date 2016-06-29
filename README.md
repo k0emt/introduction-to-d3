@@ -1,6 +1,7 @@
 # Introduction to D3.js
 
 This repository contains the Presentation materials and supporting code for Introduction to D3.js
+Code has been mostly updated for D3 v4 -- treemaps and eventdrops remain v3.
 
 ## Setup
 Make sure to have d3.js and d3.min.js copied into this level of the file system.

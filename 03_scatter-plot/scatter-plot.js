@@ -23,9 +23,9 @@ var svg = d3.select("body")
     .attr("width",  plotDimension + padding)
     .attr("height", plotDimension + padding);
 
-var xScale = d3.scale.linear().range([0, plotDimension]);
-var yScale = d3.scale.linear().range([plotDimension, 0]);
-var colorScale = d3.scale.category10();   // setting up a color scale
+var xScale = d3.scaleLinear().range([0, plotDimension]);
+var yScale = d3.scaleLinear().range([plotDimension, 0]);
+var colorScale = d3.scaleOrdinal(d3.schemeCategory10);   // setting up a color scheme
 
 function render(data){
     // nice() does some magic to get things to start at 0!
@@ -46,16 +46,14 @@ function render(data){
 }
 
 function make_y_axis() {
-    return d3.svg.axis()
-          .scale(yScale)
-          .orient("left")
+    return d3
+          .axisLeft(yScale)
           .ticks(10);
 }
 
 function make_x_axis() {
-    return d3.svg.axis()
-          .scale(xScale)
-          .orient("bottom")
+    return d3
+          .axisBottom(xScale)
           .ticks(10);
 }
 

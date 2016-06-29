@@ -19,11 +19,11 @@
   			var width = 500;
   			var height = 300;
 
-        var xScale = d3.scale.linear()
+        var xScale = d3.scaleLinear()
                     .domain([0,100])  // inputs
                     .range([0,width]); // mapped to here
 
-        var yScale = d3.scale.linear()  // dynamic max value
+        var yScale = d3.scaleLinear()  // dynamic max value
                     .domain([0,d3.max(dataset, function(d) { return d.y; })])  // inputs
                     .range([0,height]); // mapped to here
                                         // notice cropping because no padding

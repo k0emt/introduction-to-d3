@@ -11,15 +11,15 @@ var rightMargin = 10;
 var topMargin = 10;
 var bottomMargin = 50;
 
-var x = d3.scale.linear()
+var x = d3.scaleLinear()
     .domain([0, 30])
     .range([0, width]);
 
-var y = d3.scale.ordinal()
+var y = d3.scaleBand()
     .domain(table.map(function(d) { // WOT is this ???
         return d.name;
     }))
-    .rangeRoundBands([0, height], 0.2);  // maps to integers
+    .rangeRound([0, height], 0.2);  // maps to integers
 
 var chart = d3
     .select('body')
@@ -36,14 +36,13 @@ var bars = chart
     .attr('y', function(d, i) {
         return y(d.name) + topMargin;
     })
-    .attr('height', y.rangeBand())
+    .attr('height', y.bandWidth)
     .attr('width', function(d, i) {
         return x(d.value);
     });
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient('bottom')
+var xAxis = d3
+    .axisBottom(x)
     .ticks(10); // really just a suggestion
 
 chart
@@ -52,9 +51,8 @@ chart
     .attr("transform", "translate(" + leftMargin + "," + (height + 15) + ")")
     .call(xAxis);
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient('left');
+var yAxis = d3
+    .axisLeft(y);
 
 chart
     .append('g')

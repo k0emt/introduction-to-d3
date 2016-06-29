@@ -45,28 +45,26 @@
         var h = 500;
         var padding = 40; // room for axes
 
-        var xScale = d3.scale.linear()
+        var xScale = d3.scaleLinear()
             .domain([0, d3.max(dataset, function(d) {
                 return d[0];
             })])
             .range([padding, w - padding]); // using padding
 
-        var yScale = d3.scale.linear()
+        var yScale = d3.scaleLinear()
             .domain([0, d3.max(dataset, function(d) {
                 return d[1];
             })])
             .range([h - padding, padding]); // magic here!
 
         //Define X axis
-        var xAxis = d3.svg.axis()
-            .scale(xScale)
-            .orient("bottom")
+        var xAxis = d3
+            .axisBottom(xScale)
             .ticks(5); // really just a suggestion
 
         //Define Y axis
-        var yAxis = d3.svg.axis()
-            .scale(yScale)
-            .orient("left")
+        var yAxis = d3
+            .axisLeft(yScale)
             .ticks(5);  // really just a suggestion
 
         var svg = d3.select("body")
