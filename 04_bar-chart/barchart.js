@@ -10,6 +10,7 @@ var leftMargin = 100;
 var rightMargin = 10;
 var topMargin = 10;
 var bottomMargin = 50;
+var padding = 4;
 
 var x = d3.scaleLinear()
     .domain([0, 30])
@@ -36,7 +37,7 @@ var bars = chart
     .attr('y', function(d, i) {
         return y(d.name) + topMargin;
     })
-    .attr('height', y.bandWidth)
+    .attr('height', y.bandwidth() - padding)
     .attr('width', function(d, i) {
         return x(d.value);
     });

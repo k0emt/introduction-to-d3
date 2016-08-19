@@ -39,9 +39,10 @@
             .append("circle")
             .attr("cx", width / 2)  // initial values
             .attr("cy", height / 2)
-            .attr("r", 1)
+            .attr("r", 10)
+            .attr("fill",'black')
             .transition()     // magic
-            .duration(2000)
+            .duration(4000)
             .attr("r", function(d) {
               return d.r;
             })
