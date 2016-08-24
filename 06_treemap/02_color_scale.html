@@ -15,26 +15,25 @@
         children: [
         			{ name: "old stuff",
               	children: [
-                  { name: "old 1", size: 3286},
-                  { name: "old 2", size: 4436},
-                  { name: "old 3", size: 2246},
+                  { name: "old 1", size: 1286},
+                  { name: "old 2", size: 2436},
+                  { name: "old 3", size: 2546},
                   { name: "old 4", size: 2604}
               	] },
-              { name: "a", size: 2850},
-              { name: "b", size: 4510},
-              { name: "c", size: 3786},
-              { name: "d", size: 6048},
+              { name: "a", size: 1050},
+              { name: "b", size: 2010},
+              { name: "c", size: 2586},
+              { name: "d", size: 3200},
             ]
     };
 
-    // color scale!
+    // ordinal color scale!
     var treeMapColorScale = d3.scale.ordinal()
                 .domain(["old 1", "old 2", "old 3", "old 4", "a", "b", "c","d"])
                 .range(["#DDD", "#AAA", "#888", "#555", "red", "green", "blue", "yellow"]);
 
         var width = innerWidth - 40,
             height = innerHeight - 40,
-            color = d3.scale.category20(),        // color scale
             div = d3.select("body").append("div")
             .style("position", "relative");
 
@@ -50,7 +49,7 @@
             .enter().append("div")
             .attr("class", "node")
             .call(position)
-                                                            // color assignment
+                                                    // color assignment
             .style("background-color", function(d) {
       	        return d.name == 'tree' ? '#fff' : treeMapColorScale(d.name); })
             .append('div')

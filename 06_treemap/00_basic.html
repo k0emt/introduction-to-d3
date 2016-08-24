@@ -28,7 +28,7 @@
 
         var width = innerWidth - 40,
             height = innerHeight - 40,
-            color = d3.scale.category20(),
+            color = d3.scale.category20(), // color scale
             div = d3.select("body").append("div")
             .style("position", "relative");
 
@@ -39,6 +39,7 @@
                 return d.size;
             });
 
+        // color setting by name with scale
         var node = div.datum(tree).selectAll(".node")
             .data(treemap.nodes)
             .enter().append("div")
