@@ -29,6 +29,7 @@ var colorScale = d3.scaleOrdinal(d3.schemeCategory10);   // setting up a color s
 
 function render(data){
     // nice() does some magic to get things to start at 0!
+    // extent() -- min/max
     xScale.domain(d3.extent(data, function (d){ return d.x; })).nice();
     yScale.domain(d3.extent(data, function (d){ return d.y; })).nice();
 
