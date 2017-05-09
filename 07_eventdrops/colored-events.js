@@ -25,11 +25,8 @@ for (var i = 0; i < names.length; i++) {
     data.push(createEvent(names[i]));
 }
 
-// var color = d3.scale.category20();
-// TODO: trigger color change on data
-var color = d3.scale.ordinal()
-  .domain(["one", "two", "three", "four", "five"])
-  .range(["#2ca02c", "#1f77b4" , "#d62728", "#000", "#ff7f0e"]);
+// TODO: color based on event type
+var color = d3.scale.category10();
 
 // create chart function
 var eventDropsChart = d3.chart.eventDrops()

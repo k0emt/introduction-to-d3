@@ -4,7 +4,7 @@ This repository contains the Presentation materials and supporting code for Intr
 Code has been mostly updated for D3 v4 -- treemaps and eventdrops remain v3.
 
 ## Setup
-Make sure to have d3.js and d3.min.js copied into this level of the file system.
+Make sure to have d3.min.js (v4) and d3.v3.min.js in this level of the file system.
 
 ## Running a local webserver
 
